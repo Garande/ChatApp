@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_10"
+    tools:context=".views.activities.AuthActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:background="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        >
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            android:layout_margin="15dp"
+            >
+
+            <LinearLayout
+                android:id="@+id/phoneNumberView"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:text="SIGN IN"
+                    android:textColor="@color/green_500"
+                    android:layout_marginTop="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:layout_marginBottom="20dp"/>
+
+                <LinearLayout
+                    android:background="@drawable/textfield_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    >
+                    <com.hbb20.CountryCodePicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/countryCodePicker"
+                        app:ccp_defaultNameCode="UG"
+                        />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/userPhoneNumber"
+                        android:background="@android:color/transparent"
+                        android:hint="Phone Number"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:padding="10dp"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_marginTop="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/btn_rounded_primary"
+                    android:text="S I G N  I N"
+                    android:onClick="handleLogin"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pinEntryView"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:text="Enter the OTP that was sent to "
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/phoneNumberText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:text="+267687768687"
+                    android:textSize="18sp"
+                    android:textColor="@color/green_500"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <com.chaos.view.PinView
+                        android:id="@+id/pinView"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/PinWidget.PinView"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        app:itemCount="6"
+                        app:itemRadius="4dp"
+                        app:itemSpacing="5dp"
+                        app:itemWidth="36dp"
+                        app:itemHeight="48dp"
+                        app:lineColor="@color/colorPrimary"
+                        app:viewType="rectangle"
+                        app:lineWidth="2dp"
+                        android:textColor="#222222"
+                        app:cursorColor="@color/colorPrimary"/>
+                </LinearLayout>
+
+                <Button
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/btn_rounded_primary"
+                    android:text="C O N T I N U E"
+                    android:onClick="submitOtp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
